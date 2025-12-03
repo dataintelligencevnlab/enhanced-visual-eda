@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "87d10e71688636a48d95",
+  "position": {
+    "x": 530.60098522167493,
+    "y": 1023.4876847290641,
+    "z": 0,
+    "height": 32.512315270935964,
+    "width": 284.807881773399,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "https://www.jstatsoft.org/article/view/v105i07",
+                    "textStyle": {},
+                    "url": "https://www.jstatsoft.org/article/view/v105i07"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

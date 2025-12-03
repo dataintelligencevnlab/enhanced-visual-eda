@@ -1,0 +1,66 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "8ecd6a742213e75657ba",
+  "position": {
+    "x": 438.51851851851853,
+    "y": 441.75084175084174,
+    "z": 3000,
+    "height": 234.88215488215488,
+    "width": 826.39730639730647,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "A visible “V” or “funnel” shape suggests that low-profit and negative-profit orders still generate sales, implying inefficiency or pricing/margin issues in some transactions.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Only a few orders achieve both high sales and high profit, showing that large orders do not always guarantee high profitability.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "There is a positive but non-linear relationship between sales and profit. However, a few extreme outliers significantly distort the overall distribution. Investigating these exceptional orders could improve understanding of profit drivers and loss sources in the dataset.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

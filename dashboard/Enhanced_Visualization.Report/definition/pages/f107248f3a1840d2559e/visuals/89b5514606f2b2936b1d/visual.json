@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "89b5514606f2b2936b1d",
+  "position": {
+    "x": 919.057239057239,
+    "y": 682.02020202020208,
+    "z": 2000,
+    "height": 37.710437710437709,
+    "width": 360.94276094276097,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "https://ieeexplore.ieee.org/abstract/document/10542125",
+                    "textStyle": {},
+                    "url": "https://ieeexplore.ieee.org/abstract/document/10542125"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

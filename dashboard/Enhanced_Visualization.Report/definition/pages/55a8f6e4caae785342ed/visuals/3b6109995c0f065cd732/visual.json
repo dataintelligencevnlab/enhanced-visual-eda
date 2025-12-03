@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "3b6109995c0f065cd732",
+  "position": {
+    "x": 7.8029556650246308,
+    "y": 911.64532019704438,
+    "z": 4000,
+    "height": 101.4384236453202,
+    "width": 799.80295566502468,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The boxplot analysis of quarterly profit from 2014 to 2017 reveals a gradual upward trend in overall profitability. Profit variability increases over time, particularly in Q4, indicating strong seasonality and higher business activity during year-end periods. Q1 and Q2 remain relatively stable with smaller spreads, while Q3 and Q4 show wider interquartile ranges and several outliers, reflecting both opportunities and risks in late-year performance. The presence of extreme outliers suggests the need for further investigation into exceptional transactions or data quality issues.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

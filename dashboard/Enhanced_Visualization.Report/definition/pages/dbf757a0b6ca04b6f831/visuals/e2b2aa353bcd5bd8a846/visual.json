@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "e2b2aa353bcd5bd8a846",
+  "position": {
+    "x": 7.1428571428571432,
+    "y": 882.85714285714289,
+    "z": 3000,
+    "height": 140,
+    "width": 802.85714285714289,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "This bubble map displays the profit by state across the United States. Each bubble represents a state, where the size indicates the magnitude of profit and the color represents profitability: ranging from red (low or negative profit) to green (high profit).",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "We can observe that California, New York, and Washington generate the highest profits, shown by large green circles. Meanwhile, Texas and some central states report lower or negative profits, represented by smaller or reddish circles.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "This visualization helps quickly identify regional performance patterns and highlights key profit-driving states for further business analysis.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

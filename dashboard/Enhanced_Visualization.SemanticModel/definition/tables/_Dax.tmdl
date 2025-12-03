@@ -1,0 +1,220 @@
+table _Dax
+	lineageTag: 1636fd9a-8e49-4b73-b3d5-61fdb022b94e
+
+	measure Profit = SUM(Superstore[Profit])
+		formatString: #,0.00
+		lineageTag: b3959eb8-aa5f-47ee-a71f-14e5d622c49c
+
+	measure _Color_Border = "#CCCCCC"
+		lineageTag: 10543076-cd22-4cf0-a381-091acb6e4906
+
+	measure Outlier_Profit_Sales = ```
+			
+			VAR _profit = SELECTEDVALUE(Superstore[Profit])
+			VAR _sales = SELECTEDVALUE(Superstore[Sales])
+			RETURN
+			    IF(
+			        _sales > 10000 || (_profit > 5000 || _profit < -5000),
+			        1,
+			        0
+			    )
+			
+			```
+		formatString: 0
+		lineageTag: 31e2db56-3871-4896-8853-b9e0af5de1d1
+
+	measure Sales = SUM(Superstore[Sales])
+		formatString: #,0.00
+		lineageTag: 5c607fcb-da8b-460a-a498-f63dd4889dd2
+
+	measure Quantity = SUM(Superstore[Quantity])
+		formatString: #,0
+		lineageTag: 677377f5-295e-478b-8b5e-49a5d41f0f18
+
+	measure Discount = SUM(Superstore[Discount])
+		formatString: #,0.00
+		lineageTag: 6bd63083-e2b4-43b1-952c-ba58ca3df248
+
+	measure Outlier_Profit_Sales_SubTitle =
+			
+			VAR _orders = COUNTROWS(
+			    FILTER(
+			        'Superstore',
+			        'Superstore'[Sales] > 10000 ||
+			        ('Superstore'[Profit] > 5000 || 'Superstore'[Profit] < -5000)
+			    )
+			)
+			
+			RETURN  _orders & " Orders as Outliers"
+		lineageTag: 173f36b6-b237-48e1-a063-0b10ad4b16bc
+
+	measure _Color_Red = "#FF0000"
+		lineageTag: ad9fb4c6-5a92-46bc-adee-0879cda8eff3
+
+	measure _Color_Yellow = "#FFFF00"
+		lineageTag: e666a128-e11b-4432-94dd-efca01f3e216
+
+	measure _Color_Green = "#00FF00"
+		lineageTag: 8eb5be13-5743-40d3-8643-8860908e46d2
+
+	measure Cost = [Sales] - [Profit]
+		lineageTag: a5177771-93ec-4231-8c95-0448dd176df0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Avg_Monthly_Profit =
+			
+			VAR _totalProfit = [Profit]
+			VAR _monthCount = DISTINCTCOUNT('Superstore'[Order Date].[Month])
+			RETURN
+			    DIVIDE(_totalProfit, _monthCount)
+		lineageTag: 0fbb802d-84a5-45ab-967e-b52974a4186f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Monthly_Sales_Indicate =
+			
+			VAR _max_profit = CALCULATE(
+			    MAXX(
+			        VALUES(Superstore[Order Date].[Month]),
+			        [Profit]
+			    ), ALLSELECTED(Superstore)
+			)
+			VAR _min_profit = CALCULATE(
+			    MINX(
+			        VALUES(Superstore[Order Date].[Month]),
+			        [Profit]
+			    ), ALLSELECTED(Superstore)
+			)
+			RETURN
+			SWITCH(
+			    TRUE(),
+			    [Profit] = _max_profit, 1,
+			    [Profit] = _min_profit, -1,
+			    0
+			)
+		formatString: 0
+		lineageTag: 9b73e4f9-405a-45f6-b764-d25940a04412
+
+	measure Descriptive_Sales = ```
+			
+			SWITCH(
+			    SELECTEDVALUE(DescriptiveStats[Statistic]),
+			    "Count", FORMAT(COUNTROWS(Superstore), "#,###"),
+			    "Min", MIN(Superstore[Sales]),
+			    "Q1", PERCENTILEX.INC(Superstore, Superstore[Sales], 0.25),
+			    "Mean", AVERAGE(Superstore[Sales]),
+			    "Median", MEDIAN(Superstore[Sales]),
+			    "Q3", PERCENTILEX.INC(Superstore, Superstore[Sales], 0.75),
+			    "Max", MAX(Superstore[Sales]),
+			    "Std Dev", STDEV.P(Superstore[Sales]),
+			    "IQR", PERCENTILEX.INC(Superstore, Superstore[Sales], 0.75) - PERCENTILEX.INC(Superstore, Superstore[Sales], 0.25),
+			    "Range", MAX(Superstore[Sales]) - MIN(Superstore[Sales])
+			)
+			
+			```
+		lineageTag: d799a299-c326-475f-a6b2-3880a0836123
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Descriptive_Profit = ```
+			
+			SWITCH(
+			    SELECTEDVALUE(DescriptiveStats[Statistic]),
+			    "Count", FORMAT(COUNTROWS(Superstore), "#,###"),
+			    "Min", MIN(Superstore[Profit]),
+			    "Q1", PERCENTILEX.INC(Superstore, Superstore[Profit], 0.25),
+			    "Mean", AVERAGE(Superstore[Profit]),
+			    "Median", MEDIAN(Superstore[Profit]),
+			    "Q3", PERCENTILEX.INC(Superstore, Superstore[Profit], 0.75),
+			    "Max", MAX(Superstore[Profit]),
+			    "Std Dev", STDEV.P(Superstore[Profit]),
+			    "IQR", PERCENTILEX.INC(Superstore, Superstore[Profit], 0.75) - PERCENTILEX.INC(Superstore, Superstore[Profit], 0.25),
+			    "Range", MAX(Superstore[Profit]) - MIN(Superstore[Profit])
+			)
+			
+			```
+		lineageTag: b1cf28c1-4138-40cb-b707-40985c48a414
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Descriptive_Quantity =
+			
+			SWITCH(
+			    SELECTEDVALUE(DescriptiveStats[Statistic]),
+			    "Count", FORMAT(COUNTROWS(Superstore), "#,###"),
+			    "Min", FORMAT(MIN(Superstore[Quantity]), "#,###"),
+			    "Q1", FORMAT(PERCENTILEX.INC(Superstore, Superstore[Quantity], 0.25), "#,###"),
+			    "Mean", AVERAGE(Superstore[Quantity]),
+			    "Median", FORMAT(MEDIAN(Superstore[Quantity]), "#,###"),
+			    "Q3", FORMAT(PERCENTILEX.INC(Superstore, Superstore[Quantity], 0.75), "#,###"),
+			    "Max", FORMAT(MAX(Superstore[Quantity]), "#,###"),
+			    "Std Dev", STDEV.P(Superstore[Quantity]),
+			    "IQR", FORMAT(PERCENTILEX.INC(Superstore, Superstore[Quantity], 0.75) - PERCENTILEX.INC(Superstore, Superstore[Quantity], 0.25), "#,###"),
+			    "Range", FORMAT(MAX(Superstore[Quantity]) - MIN(Superstore[Quantity]), "#,###")
+			)
+		lineageTag: e4a91400-bf79-4e07-91fd-f638083a3a21
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Descriptive_Discount = ```
+			
+			SWITCH(
+			    SELECTEDVALUE(DescriptiveStats[Statistic]),
+			    "Count", FORMAT(COUNTROWS(Superstore), "#,###"),
+			    "Min", MIN(Superstore[Discount]),
+			    "Q1", PERCENTILEX.INC(Superstore, Superstore[Discount], 0.25),
+			    "Mean", AVERAGE(Superstore[Discount]),
+			    "Median", MEDIAN(Superstore[Discount]),
+			    "Q3", PERCENTILEX.INC(Superstore, Superstore[Discount], 0.75),
+			    "Max", MAX(Superstore[Discount]),
+			    "Std Dev", STDEV.P(Superstore[Discount]),
+			    "IQR", PERCENTILEX.INC(Superstore, Superstore[Discount], 0.75) - PERCENTILEX.INC(Superstore, Superstore[Discount], 0.25),
+			    "Range", MAX(Superstore[Discount]) - MIN(Superstore[Discount])
+			)
+			
+			```
+		lineageTag: 5c64d32f-0dd8-43f1-8143-d40283ab4c2a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Map_Chart_Title = ```
+			
+			VAR TotalProfit = [Profit]   // Tổng lợi nhuận trong context hiện tại
+			VAR MinProfit = MINX(VALUES('Superstore'[State]), [Profit])
+			VAR MaxProfit = MAXX(VALUES('Superstore'[State]), [Profit])
+			VAR MinState =
+			    CALCULATE(
+			        SELECTEDVALUE('Superstore'[State]),
+			        FILTER(ALLSELECTED(Superstore[State]), [Profit] = MinProfit)
+			    )
+			VAR MaxState =
+			    CALCULATE(
+			        SELECTEDVALUE('Superstore'[State]),
+			        FILTER(ALLSELECTED(Superstore[State]), [Profit] = MaxProfit)
+			    )
+			RETURN
+			"Total Profit: " & FORMAT(TotalProfit/1000, "#,#K") &
+			" | " & MinState & ": " & FORMAT(MinProfit/1000, "#,#K") &
+			"  =>  " & MaxState & ": " & FORMAT(MaxProfit/1000, "#,#K")
+			
+			```
+		lineageTag: 0a6c98f8-4a07-4b59-b6b4-d739fd75f16a
+
+	column Column
+		formatString: 0
+		lineageTag: 37af7757-160a-445a-bf26-b05cf4f3bf40
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Dax = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = d21bdc759c1f4993ab9a20445e15b9d2
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

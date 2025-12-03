@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "8e5a5517829102d55c2e",
+  "position": {
+    "x": 838.927507447865,
+    "y": 686.39523336643492,
+    "z": 2000,
+    "height": 33.048659384309829,
+    "width": 441.07249255213503,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "https://www.sciencedirect.com/science/article/pii/S2665917422000228",
+                    "textStyle": {},
+                    "url": "https://www.sciencedirect.com/science/article/pii/S2665917422000228"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

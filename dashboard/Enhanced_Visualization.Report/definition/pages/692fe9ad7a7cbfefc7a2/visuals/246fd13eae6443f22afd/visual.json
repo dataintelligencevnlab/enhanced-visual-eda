@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "246fd13eae6443f22afd",
+  "position": {
+    "x": 438.50823937554208,
+    "y": 411.86470078057243,
+    "z": 1000,
+    "height": 264.21509106678229,
+    "width": 825.949696444059,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "The dataset contains 9,994 records with no missing values, indicating good data completeness. Sales and Profit show high variability, with extreme outliers; particularly a significant negative Profit value (-6,599.98) that suggests data entry errors or exceptional loss transactions. The wide range and large standard deviation in Sales and Profit indicate right-skewed distributions, typical of business datasets with a few high-value transactions. Quantity is relatively stable and evenly distributed, while Discount remains within a narrow range, implying consistent promotional policies. Overall, the dataset is suitable for further exploratory or predictive analysis, but outliers in Profit and Sales should be reviewed and handled carefully before modeling",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "14pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

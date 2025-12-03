@@ -1,0 +1,44 @@
+table DescriptiveStats
+	lineageTag: 0d55f0a6-06d7-46cb-bcc0-019b0594b140
+
+	column Statistic
+		lineageTag: 5da4e364-838a-41a3-b509-c000fae40a0d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Statistic]
+		sortByColumn: No
+
+		annotation SummarizationSetBy = Automatic
+
+	column No
+		formatString: 0
+		lineageTag: 8dfa4f95-a942-4367-a72e-1989388a1330
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [No]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DescriptiveStats = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "No", INTEGER, "Statistic", STRING,
+				    {
+				        {1, "Count"},
+				        {2, "Min"},
+				        {3, "Q1"},
+				        {4, "Mean"},
+				        {5, "Median"},
+				        {6, "Q3"},
+				        {7, "Max"},
+				        {8, "Std Dev"},
+				        {9, "IQR"},
+				        {10, "Range"},
+				        {11, "Skewness"}
+				    }
+				)
+
+	annotation PBI_Id = 0fe183c2e70c45749ee0f2e8e7d256ed
+

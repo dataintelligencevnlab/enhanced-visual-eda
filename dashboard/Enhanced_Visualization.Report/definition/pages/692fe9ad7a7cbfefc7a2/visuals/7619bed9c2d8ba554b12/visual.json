@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "7619bed9c2d8ba554b12",
+  "position": {
+    "x": 914,
+    "y": 688,
+    "z": 0,
+    "height": 31,
+    "width": 366,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "https://onlinelibrary.wiley.com/doi/epdf/10.1002/hsr2.1214",
+                    "textStyle": {},
+                    "url": "https://www.jstatsoft.org/article/view/v105i07"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

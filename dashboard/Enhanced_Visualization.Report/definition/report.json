@@ -1,0 +1,101 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY25SU10",
+      "reportVersionAtImport": {
+        "visual": "2.1.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "expanded": {
+            "expr": {
+              "Literal": {
+                "Value": "true"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "publicCustomVisuals": [
+    "BoxandWhiskerByMAQ1823AD39DT234AB532063E128AX",
+    "iconMapSlicer99906171E08E452C9C884530F82BBB86",
+    "deneb7E15AEF80B9E4D4F8E12924291ECE89A",
+    "PBI_CV_7B952816_A48F_49B4_9E13_15E3BB2C0337"
+  ],
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY25SU10",
+          "path": "BaseThemes/CY25SU10.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "boxplot3896895527119325.JPG",
+          "path": "boxplot3896895527119325.JPG",
+          "type": "Image"
+        },
+        {
+          "name": "Column_Sales_by_Month7619906289483731.JPG",
+          "path": "Column_Sales_by_Month7619906289483731.JPG",
+          "type": "Image"
+        },
+        {
+          "name": "Outliers2831391164209264.JPG",
+          "path": "Outliers2831391164209264.JPG",
+          "type": "Image"
+        },
+        {
+          "name": "Map27291789908137265.JPG",
+          "path": "Map27291789908137265.JPG",
+          "type": "Image"
+        },
+        {
+          "name": "DataSummary287694003696082.JPG",
+          "path": "DataSummary287694003696082.JPG",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "filterPaneHiddenInEditMode": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

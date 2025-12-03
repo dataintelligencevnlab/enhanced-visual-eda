@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "4eae05c1dd8ee3820d7e",
+  "position": {
+    "x": 494.28571428571433,
+    "y": 1022.8571428571429,
+    "z": 2000,
+    "height": 32.857142857142861,
+    "width": 315.71428571428572,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "http://sumc.lt/index.php/se/article/view/1895/1407",
+                    "textStyle": {},
+                    "url": "https://www.sciencedirect.com/science/article/pii/S2665917422000228"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
